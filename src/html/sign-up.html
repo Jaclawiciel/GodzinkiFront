@@ -1,0 +1,73 @@
+<!doctype html>
+<html class="js" lang="pl">
+	
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Rejestracja | Godzinki</title>
+		<meta name="description" content="Strona rejestracji - Godzinki">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<link rel="manifest" href="../site.webmanifest">
+		<link rel="apple-touch-icon" href="../icon.png">
+		<!-- Place favicon.ico in the root directory -->
+		
+		<link rel="stylesheet" href="../css/normalize.css">
+		<link rel="stylesheet" href="../css/main.css">
+	</head>
+	
+	<body class="sign-in-body">
+		<!--[if lte IE 9]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
+				href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+		<![endif]-->
+		
+		<!-- Add your site or application content here -->
+		<div class="content">
+			<header class="sign-in-header">
+				<h1 class="title written">Rejestracja</h1>
+			</header>
+			<main class="sign-in-main">
+				<form class="sign-in-form" action="" method="post" autocomplete="on">
+					<span class="input-details">Imię</span>
+					<input type="text" name="firstname" id="firstname" autofocus required>
+					<span class="input-details">Adres e-mail</span>
+					<input type="email" name="email" id="email" placeholder="mail@example.com" required>
+					<span class="input-details">Hasło</span>
+					<input type="password" name="password" id="password" required minlength="8">
+					<span class="input-details">Powtórz hasło</span>
+					<input type="password" name="password" id="repeat-password" required minlength="8">
+					<div class="input-checkbox-container">
+						<input type="checkbox" name="acceptRegulations" id="acceptRegulations" required><span
+							class="input-details">Zapoznałem się i akceptuję <a
+							href="regulamin.html">regulamin</a></span>
+					</div>
+					<input class="btn" type="submit" value="Utwórz konto">
+				</form>
+				<h3 class="sign-up-info">Masz już konto? <a href="sign-in.html">Zaloguj się</a>!</h3>
+			</main>
+		</div>
+		<footer class="default-footer">
+			&copy; 2018 Jacek Gałka & Piotr Majewski
+		</footer>
+		
+		<script src="../js/vendor/modernizr-{{MODERNIZR_VERSION}}.min.js"></script>
+		<!--<script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js" integrity="{{JQUERY_SRI_HASH}}" crossorigin="anonymous"></script>-->
+		<!--<script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>-->
+		<script src="../js/plugins.js"></script>
+		<script src="../js/main.js"></script>
+		
+		<!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+		<script>
+			window.ga = function () {
+				ga.q.push(arguments)
+			};
+			ga.q = [];
+			ga.l = +new Date;
+			ga('create', 'UA-XXXXX-Y', 'auto');
+			ga('send', 'pageview')
+		</script>
+		<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+	</body>
+
+</html>

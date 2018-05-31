@@ -8,11 +8,214 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
+/******* FONTS *******/
+@import url('https://fonts.googleapis.com/css?family=Pacifico|Raleway:100,200,300,400,500,600,700,800,900&subset=latin-ext');
+
+
+
+/******* COLORS *******/
+:root {
+	--fontColor: #4A4A4A;
+	--borderColor: #4A4A4A;
+	--greenColor: #286545;
+	--textSelectionColor: #DBBD0D;
+	--errorColor: #D0021B;
+}
+
+
+
+/******* GENERAL *******/
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
 html {
-    color: #222;
     font-size: 1em;
     line-height: 1.4;
+	font-family: 'Raleway', sans-serif;
+	color: var(--fontColor);
+	-webkit-font-smoothing: subpixel-antialiased;
 }
+
+
+
+/******* TEXT *******/
+.written {
+	font-family: 'Pacifico', sans-serif;
+	color: var(--greenColor);
+}
+
+
+
+/******* LINKS *******/
+a {
+	text-decoration: none;
+	color: var(--greenColor);
+	margin: 0;
+	padding: 0;
+}
+
+a:hover {
+	transition: opacity .15s;
+	opacity: 0.75;
+}
+
+
+/******* FORMS *******/
+form {
+	margin: 0 auto;
+	width: 80%;
+}
+
+input {
+	display: block;
+	margin: 0 auto 35px;
+	padding: 5px 10px;
+	background: #FFFFFF;
+	border: none;
+	border-bottom: 1px solid var(--borderColor);
+	border-radius: 0;
+	width: 100%;
+	font-size: 1.25em;
+}
+
+input:focus {
+	border: none;
+	border-bottom: 2px solid var(--greenColor);
+	/*box-shadow: inset 1px 0 0 0 #fff, inset -1px 0 0 0 #fff, inset 0px -1px 0px 1px var(--greenColor);*/
+	outline: none;
+}
+
+form .input-details {
+	display: block;
+	text-align: left;
+	font-size: 1.125em;
+	font-weight: 300;
+}
+
+input[type="checkbox"] {
+	cursor: pointer;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	outline: 0;
+	background: #fff;
+	height: 25px;
+	width: 25px;
+	border: 1px solid var(--greenColor);
+	display: inline-block;
+	font-size: 25px;
+}
+
+input[type="checkbox"]:checked {
+	background: var(--greenColor);
+}
+
+input[type="checkbox"]:hover {
+	filter: brightness(90%);
+}
+
+input[type="checkbox"]:disabled {
+	background: #e6e6e6;
+	opacity: 0.6;
+	pointer-events: none;
+}
+
+input[type="checkbox"]:after {
+	content: '';
+	position: relative;
+	left: 7px;
+	top: -8px;
+	width: 40%;
+	height: 60%;
+	border: solid #fff;
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg);
+	display: inline-block;
+}
+
+input[type="checkbox"]:checked:after {
+	display: inline-block;
+}
+
+input[type="checkbox"]:disabled:after {
+	border-color: #7b7b7b;
+}
+
+.input-checkbox-container {
+	text-align: left;
+	margin-bottom: ;
+}
+
+.input-checkbox-container .input-details {
+	display: inline-block;
+	font-size: 15px;
+	font-weight: 300;
+	margin-left: 6px;
+	text-align: left;
+}
+
+.input-checkbox-container .input-details a {
+	font-weight: 600;
+}
+
+
+
+/******* BUTTONS *******/
+.btn {
+	background: var(--greenColor);
+	width: auto;
+	padding: 10px 50px;
+	color: #fff;
+	font-size: 1.25em;
+	font-weight: 500;
+	border: none;
+	border-radius: 25px;
+	box-shadow: 0 8px 12px -3px #286545;
+	transition: all .25s;
+}
+
+.btn:hover {
+	transition: all .25s;
+	box-shadow: 0 4px 10px -3px #286545;
+	cursor: pointer;
+	padding: 10px 25px;
+	border-radius: 10px;
+}
+
+
+
+/*** ANIMATIONS ***/
+@keyframes fadein {
+	from {opacity: 0;}
+	to {opacity: 1;}
+}
+
+
+
+/*** FOOTER ***/
+
+.default-footer {
+	margin: 50px auto 0;
+	padding-bottom: 20px;
+	color: #999;
+}
+
+/* Sticky Footer */
+html, body {
+	height: 100%;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+}
+
+.content {
+	flex: 1 0 auto;
+}
+
+
 
 /*
  * Remove text-shadow in selection highlight:
@@ -25,8 +228,9 @@ html {
  */
 
 ::selection {
-    background: #b3d4fc;
+    background: var(--greenColor);
     text-shadow: none;
+	color: #fff;
 }
 
 /*
@@ -90,9 +294,25 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+/******* SIGN IN *******/
+.sign-in-body {
+	text-align: center;
+}
 
+.sign-in-header .title {
+	font-size: 2.875em;
+	margin-bottom: 50px;
+}
 
+.sign-up-info {
+	margin: 0;
+	font-size: 18px;
+	font-weight: 400;
+}
 
+.login-error {
+	color: var(--errorColor);
+}
 
 
 
