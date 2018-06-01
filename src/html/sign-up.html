@@ -16,7 +16,7 @@
 		<link rel="stylesheet" href="../css/main.css">
 	</head>
 	
-	<body class="sign-in-body">
+	<body class="sign-up-body">
 		<!--[if lte IE 9]>
 		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
 				href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
@@ -24,25 +24,38 @@
 		
 		<!-- Add your site or application content here -->
 		<div class="content">
-			<header class="sign-in-header">
+			<header class="sign-up-header">
 				<h1 class="title written">Rejestracja</h1>
 			</header>
-			<main class="sign-in-main">
-				<form class="sign-in-form" action="" method="post" autocomplete="on">
-					<span class="input-details">Imię</span>
-					<input type="text" name="firstname" id="firstname" autofocus required>
-					<span class="input-details">Adres e-mail</span>
-					<input type="email" name="email" id="email" placeholder="mail@example.com" required>
-					<span class="input-details">Hasło</span>
-					<input type="password" name="password" id="password" required minlength="8">
-					<span class="input-details">Powtórz hasło</span>
-					<input type="password" name="password" id="repeat-password" required minlength="8">
-					<div class="input-checkbox-container">
-						<input type="checkbox" name="acceptRegulations" id="acceptRegulations" required><span
+			<main class="sign-up-main">
+				<form class="sign-up-form" action="" method="post" autocomplete="on">
+					<div class="input-container">
+						<span class="input-details">Imię</span>
+						<input type="text" name="firstName" id="firstName" autofocus required onfocusout="validateInput(event)">
+						<span class="input-error-msg"></span>
+					</div>
+					<div class="input-container">
+						<span class="input-details">Adres e-mail</span>
+						<input type="email" name="email" id="email" placeholder="mail@example.com" required onfocusout="validateInput(event)">
+						<span class="input-error-msg invisible"></span>
+					</div>
+					<div class="input-container">
+						<span class="input-details">Hasło</span>
+						<input type="password" name="password" id="password" required minlength="8" onfocusout="validateInput(event)">
+						<span class="input-error-msg invisible"></span>
+					</div>
+					<div class="input-container">
+						<span class="input-details">Powtórz hasło</span>
+						<input type="password" name="password" id="repeat-password" required minlength="8" onfocusout="validateInput(event)">
+						<span class="input-error-msg invisible"></span>
+					</div>
+					<div class="input-container input-checkbox-container">
+						<input type="checkbox" name="acceptRegulations" id="acceptRegulations" required onclick="validateInput(event)"><span
 							class="input-details">Zapoznałem się i akceptuję <a
 							href="regulamin.html">regulamin</a></span>
+						<span class="input-error-msg invisible"></span>
 					</div>
-					<input class="btn" type="submit" value="Utwórz konto">
+					<input id="submit-button" class="btn" type="submit" value="Utwórz konto" disabled>
 				</form>
 				<h3 class="sign-up-info">Masz już konto? <a href="sign-in.html">Zaloguj się</a>!</h3>
 			</main>

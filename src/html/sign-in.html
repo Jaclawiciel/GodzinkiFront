@@ -26,12 +26,12 @@
 		<div class="content" id="app">
 			<header class="sign-in-header">
 				<h1 class="title written">Logowanie</h1>
+				<h3 id="error-message" class="login-error invisible">Błędny adres e-mail lub hasło</h3>
 			</header>
 			<main class="sign-in-main">
 				<form class="sign-in-form" action="" method="post" autocomplete="on">
 					<input type="email" name="email" id="email" placeholder="Adres e-mail" autofocus required>
 					<input type="password" name="password" id="password" placeholder="Hasło" required minlength="8">
-					<h3 class="login-error blink"></h3>
 					<input class="btn" type="submit" value="Zaloguj mnie">
 				</form>
 			</main>
@@ -41,7 +41,6 @@
 			&copy; 2018 Jacek Gałka & Piotr Majewski
 		</footer>
 		
-		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 		<script src="../js/vendor/modernizr-{{MODERNIZR_VERSION}}.min.js"></script>
 		<!--<script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js" integrity="{{JQUERY_SRI_HASH}}" crossorigin="anonymous"></script>-->
 		<!--<script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>-->
